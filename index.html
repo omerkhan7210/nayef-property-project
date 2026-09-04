@@ -1,526 +1,935 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Project Scope — Property Management &amp; Legal Real Estate Site</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --ink:#1c2321;
-    --paper:#f6f4ef;
-    --paper-raised:#efece3;
-    --stone:#8b8272;
-    --brass:#a9824f;
-    --teal:#2f4858;
-    --line:#dcd7c9;
-    --line-strong:#c7c0ac;
-    --max:920px;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Inter',sans-serif;
-    font-size:16px;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3{
-    font-family:'Fraunces',serif;
-    font-weight:500;
-    margin:0;
-    letter-spacing:-0.01em;
-  }
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
-  a{color:var(--teal);}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Project Scope — Property Management &amp; Legal Real Estate Site
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #1c2321;
+        --paper: #f6f4ef;
+        --paper-raised: #efece3;
+        --stone: #8b8272;
+        --brass: #a9824f;
+        --teal: #2f4858;
+        --line: #dcd7c9;
+        --line-strong: #c7c0ac;
+        --max: 920px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Inter", sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Fraunces", serif;
+        font-weight: 500;
+        margin: 0;
+        letter-spacing: -0.01em;
+      }
+      .wrap {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 0 28px;
+      }
+      a {
+        color: var(--teal);
+      }
 
-  /* HERO */
-  .hero{
-    padding:96px 0 72px;
-    border-bottom:1px solid var(--line);
-  }
-  .hero .kicker{
-    font-size:13.5px;
-    color:var(--stone);
-    margin-bottom:18px;
-  }
-  .hero h1{
-    font-size:clamp(34px,5vw,52px);
-    line-height:1.12;
-    max-width:15ch;
-  }
-  .hero p.lede{
-    max-width:56ch;
-    font-size:18px;
-    color:#40473f;
-    margin-top:22px;
-  }
-  .hero .meta{
-    display:flex;
-    gap:36px;
-    margin-top:40px;
-    flex-wrap:wrap;
-  }
-  .hero .meta div{font-size:14px;color:var(--stone);}
-  .hero .meta strong{display:block;color:var(--ink);font-size:15px;font-weight:600;margin-bottom:2px;}
+      /* HERO */
+      .hero {
+        padding: 96px 0 72px;
+        border-bottom: 1px solid var(--line);
+      }
+      .hero .kicker {
+        font-size: 13.5px;
+        color: var(--stone);
+        margin-bottom: 18px;
+      }
+      .hero h1 {
+        font-size: clamp(34px, 5vw, 52px);
+        line-height: 1.12;
+        max-width: 15ch;
+      }
+      .hero p.lede {
+        max-width: 56ch;
+        font-size: 18px;
+        color: #40473f;
+        margin-top: 22px;
+      }
+      .hero .meta {
+        display: flex;
+        gap: 36px;
+        margin-top: 40px;
+        flex-wrap: wrap;
+      }
+      .hero .meta div {
+        font-size: 14px;
+        color: var(--stone);
+      }
+      .hero .meta strong {
+        display: block;
+        color: var(--ink);
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 2px;
+      }
 
-  /* BLUEPRINT HERO GRAPHIC */
-  .blueprint{
-    margin-top:56px;
-    border:1px solid var(--line-strong);
-    background:
-      linear-gradient(var(--line) 1px, transparent 1px) 0 0/32px 32px,
-      linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0/32px 32px,
-      #fbfaf6;
-    padding:36px 28px;
-    position:relative;
-    overflow:hidden;
-  }
-  .bp-row{display:flex;align-items:center;gap:0;flex-wrap:wrap;}
-  .bp-node{
-    font-family:'Inter',sans-serif;
-    font-size:12.5px;
-    font-weight:500;
-    padding:9px 14px;
-    border:1px solid var(--ink);
-    background:var(--paper);
-    white-space:nowrap;
-    opacity:0;
-    transform:translateY(6px);
-    animation:bpIn .5s ease forwards;
-  }
-  .bp-node.accent{border-color:var(--brass);color:var(--brass);}
-  .bp-arrow{
-    color:var(--stone);
-    font-size:14px;
-    padding:0 10px;
-    opacity:0;
-    animation:bpIn .5s ease forwards;
-  }
-  @keyframes bpIn{to{opacity:1;transform:translateY(0);}}
+      /* BLUEPRINT HERO GRAPHIC */
+      .blueprint {
+        margin-top: 56px;
+        border: 1px solid var(--line-strong);
+        background:
+          linear-gradient(var(--line) 1px, transparent 1px) 0 0/32px 32px,
+          linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0/32px 32px,
+          #fbfaf6;
+        padding: 36px 28px;
+        position: relative;
+        overflow: hidden;
+      }
+      .bp-row {
+        display: flex;
+        align-items: center;
+        gap: 0;
+        flex-wrap: wrap;
+      }
+      .bp-node {
+        font-family: "Inter", sans-serif;
+        font-size: 12.5px;
+        font-weight: 500;
+        padding: 9px 14px;
+        border: 1px solid var(--ink);
+        background: var(--paper);
+        white-space: nowrap;
+        opacity: 0;
+        transform: translateY(6px);
+        animation: bpIn 0.5s ease forwards;
+      }
+      .bp-node.accent {
+        border-color: var(--brass);
+        color: var(--brass);
+      }
+      .bp-arrow {
+        color: var(--stone);
+        font-size: 14px;
+        padding: 0 10px;
+        opacity: 0;
+        animation: bpIn 0.5s ease forwards;
+      }
+      @keyframes bpIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-  section{padding:64px 0;border-bottom:1px solid var(--line);}
-  section:last-of-type{border-bottom:none;}
-  .eyebrow-label{
-    font-size:13px;
-    color:var(--brass);
-    font-weight:600;
-    margin-bottom:10px;
-  }
-  section h2{font-size:28px;max-width:20ch;margin-bottom:14px;}
-  section > .intro{max-width:60ch;color:#40473f;margin-bottom:36px;}
+      section {
+        padding: 64px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      section:last-of-type {
+        border-bottom: none;
+      }
+      .eyebrow-label {
+        font-size: 13px;
+        color: var(--brass);
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      section h2 {
+        font-size: 28px;
+        max-width: 20ch;
+        margin-bottom: 14px;
+      }
+      section > .intro {
+        max-width: 60ch;
+        color: #40473f;
+        margin-bottom: 36px;
+      }
 
-  /* ARCHITECTURE STACK */
-  .stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line-strong);border:1px solid var(--line-strong);}
-  .stack-item{background:var(--paper);padding:22px;}
-  .stack-item .role{font-size:12px;color:var(--stone);margin-bottom:6px;}
-  .stack-item .tool{font-family:'Fraunces',serif;font-size:19px;margin-bottom:8px;}
-  .stack-item .why{font-size:14px;color:#40473f;}
+      /* ARCHITECTURE STACK */
+      .stack {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1px;
+        background: var(--line-strong);
+        border: 1px solid var(--line-strong);
+      }
+      .stack-item {
+        background: var(--paper);
+        padding: 22px;
+      }
+      .stack-item .role {
+        font-size: 12px;
+        color: var(--stone);
+        margin-bottom: 6px;
+      }
+      .stack-item .tool {
+        font-family: "Fraunces", serif;
+        font-size: 19px;
+        margin-bottom: 8px;
+      }
+      .stack-item .why {
+        font-size: 14px;
+        color: #40473f;
+      }
 
-  /* SITEMAP TREE */
-  .tree{border-left:1px solid var(--line-strong);margin-left:6px;}
-  .branch{position:relative;padding:0 0 0 26px;margin-bottom:2px;}
-  .branch::before{
-    content:'';
-    position:absolute;left:-1px;top:16px;width:20px;height:1px;background:var(--line-strong);
-  }
-  .branch-head{
-    display:flex;align-items:center;justify-content:space-between;
-    padding:12px 16px;
-    background:var(--paper);
-    border:1px solid var(--line);
-    cursor:pointer;
-    user-select:none;
-  }
-  .branch-head:hover{border-color:var(--line-strong);}
-  .branch-head .name{font-weight:500;font-size:15px;}
-  .branch-head .tag{font-size:11.5px;color:var(--stone);margin-left:10px;}
-  .branch-head .chev{color:var(--stone);font-size:13px;transition:transform .2s ease;}
-  .branch.open .chev{transform:rotate(90deg);}
-  .branch-body{
-    max-height:0;overflow:hidden;transition:max-height .25s ease;
-    padding-left:16px;
-  }
-  .branch.open .branch-body{max-height:220px;}
-  .branch-body ul{margin:10px 0 14px;padding-left:18px;color:#40473f;font-size:14px;}
-  .branch-body li{margin-bottom:5px;}
+      /* SITEMAP TREE */
+      .tree {
+        border-left: 1px solid var(--line-strong);
+        margin-left: 6px;
+      }
+      .branch {
+        position: relative;
+        padding: 0 0 0 26px;
+        margin-bottom: 2px;
+      }
+      .branch::before {
+        content: "";
+        position: absolute;
+        left: -1px;
+        top: 16px;
+        width: 20px;
+        height: 1px;
+        background: var(--line-strong);
+      }
+      .branch-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 16px;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        cursor: pointer;
+        user-select: none;
+      }
+      .branch-head:hover {
+        border-color: var(--line-strong);
+      }
+      .branch-head .name {
+        font-weight: 500;
+        font-size: 15px;
+      }
+      .branch-head .tag {
+        font-size: 11.5px;
+        color: var(--stone);
+        margin-left: 10px;
+      }
+      .branch-head .chev {
+        color: var(--stone);
+        font-size: 13px;
+        transition: transform 0.2s ease;
+      }
+      .branch.open .chev {
+        transform: rotate(90deg);
+      }
+      .branch-body {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.25s ease;
+        padding-left: 16px;
+      }
+      .branch.open .branch-body {
+        max-height: 220px;
+      }
+      .branch-body ul {
+        margin: 10px 0 14px;
+        padding-left: 18px;
+        color: #40473f;
+        font-size: 14px;
+      }
+      .branch-body li {
+        margin-bottom: 5px;
+      }
 
-  /* CONTENT SYSTEM DIAGRAM */
-  .cms-diagram{
-    display:grid;
-    grid-template-columns:1fr 1fr 1fr;
-    gap:14px;
-    margin-top:8px;
-  }
-  .cms-box{
-    border:1px solid var(--line-strong);
-    padding:18px;
-    background:#fbfaf6;
-  }
-  .cms-box h4{font-family:'Fraunces',serif;font-weight:500;font-size:16px;margin:0 0 8px;}
-  .cms-box p{font-size:13.5px;color:#40473f;margin:0;}
-  .cms-note{
-    grid-column:1/-1;
-    border:1px dashed var(--brass);
-    padding:16px 18px;
-    font-size:14px;
-    color:#5b4426;
-    background:rgba(169,130,79,0.06);
-  }
-  @media(max-width:700px){.cms-diagram{grid-template-columns:1fr;}}
+      /* CONTENT SYSTEM DIAGRAM */
+      .cms-diagram {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 14px;
+        margin-top: 8px;
+      }
+      .cms-box {
+        border: 1px solid var(--line-strong);
+        padding: 18px;
+        background: #fbfaf6;
+      }
+      .cms-box h4 {
+        font-family: "Fraunces", serif;
+        font-weight: 500;
+        font-size: 16px;
+        margin: 0 0 8px;
+      }
+      .cms-box p {
+        font-size: 13.5px;
+        color: #40473f;
+        margin: 0;
+      }
+      .cms-note {
+        grid-column: 1/-1;
+        border: 1px dashed var(--brass);
+        padding: 16px 18px;
+        font-size: 14px;
+        color: #5b4426;
+        background: rgba(169, 130, 79, 0.06);
+      }
+      @media (max-width: 700px) {
+        .cms-diagram {
+          grid-template-columns: 1fr;
+        }
+      }
 
-  /* PHASES TABS */
-  .tabs{display:flex;gap:0;border-bottom:1px solid var(--line-strong);margin-bottom:0;flex-wrap:wrap;}
-  .tab-btn{
-    font-family:'Inter',sans-serif;
-    font-size:14px;
-    font-weight:500;
-    padding:14px 18px;
-    background:none;
-    border:none;
-    color:var(--stone);
-    cursor:pointer;
-    border-bottom:2px solid transparent;
-    margin-bottom:-1px;
-  }
-  .tab-btn.active{color:var(--ink);border-bottom-color:var(--brass);}
-  .tab-panel{display:none;padding:30px 0 0;}
-  .tab-panel.active{display:block;}
-  .tab-panel .row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px;flex-wrap:wrap;gap:8px;}
-  .tab-panel .row h3{font-size:21px;}
-  .tab-panel .row .price{font-family:'Fraunces',serif;font-size:22px;color:var(--brass);}
-  .tab-panel .deliverable{font-size:13px;color:var(--stone);margin-bottom:18px;}
-  .tab-panel ul{padding-left:18px;margin:0;color:#40473f;font-size:14.5px;}
-  .tab-panel li{margin-bottom:7px;}
+      /* PHASES TABS */
+      .tabs {
+        display: flex;
+        gap: 0;
+        border-bottom: 1px solid var(--line-strong);
+        margin-bottom: 0;
+        flex-wrap: wrap;
+      }
+      .tab-btn {
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 14px 18px;
+        background: none;
+        border: none;
+        color: var(--stone);
+        cursor: pointer;
+        border-bottom: 2px solid transparent;
+        margin-bottom: -1px;
+      }
+      .tab-btn.active {
+        color: var(--ink);
+        border-bottom-color: var(--brass);
+      }
+      .tab-panel {
+        display: none;
+        padding: 30px 0 0;
+      }
+      .tab-panel.active {
+        display: block;
+      }
+      .tab-panel .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 16px;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .tab-panel .row h3 {
+        font-size: 21px;
+      }
+      .tab-panel .row .price {
+        font-family: "Fraunces", serif;
+        font-size: 22px;
+        color: var(--brass);
+      }
+      .tab-panel .deliverable {
+        font-size: 13px;
+        color: var(--stone);
+        margin-bottom: 18px;
+      }
+      .tab-panel ul {
+        padding-left: 18px;
+        margin: 0;
+        color: #40473f;
+        font-size: 14.5px;
+      }
+      .tab-panel li {
+        margin-bottom: 7px;
+      }
 
-  /* OWNERSHIP CHECKLIST */
-  .checklist{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;}
-  .check-item{display:flex;gap:12px;align-items:flex-start;}
-  .check-item .mark{
-    width:20px;height:20px;flex:0 0 20px;
-    border:1px solid var(--teal);
-    color:var(--teal);
-    display:flex;align-items:center;justify-content:center;
-    font-size:12px;
-    margin-top:2px;
-  }
-  .check-item p{margin:0;font-size:14.5px;}
-  .check-item strong{display:block;font-size:15px;margin-bottom:2px;}
+      /* OWNERSHIP CHECKLIST */
+      .checklist {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+      }
+      .check-item {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+      }
+      .check-item .mark {
+        width: 20px;
+        height: 20px;
+        flex: 0 0 20px;
+        border: 1px solid var(--teal);
+        color: var(--teal);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        margin-top: 2px;
+      }
+      .check-item p {
+        margin: 0;
+        font-size: 14.5px;
+      }
+      .check-item strong {
+        display: block;
+        font-size: 15px;
+        margin-bottom: 2px;
+      }
 
-  /* INVESTMENT TABLE */
-  .invest{border:1px solid var(--line-strong);}
-  .invest-row{
-    display:flex;justify-content:space-between;align-items:center;
-    padding:18px 22px;border-bottom:1px solid var(--line);
-  }
-  .invest-row:last-child{border-bottom:none;}
-  .invest-row .label{font-size:15px;}
-  .invest-row .label small{display:block;color:var(--stone);font-size:12.5px;margin-top:2px;}
-  .invest-row .amount{font-family:'Fraunces',serif;font-size:20px;}
-  .invest-row.total{background:var(--paper-raised);}
-  .invest-row.total .amount{color:var(--brass);font-size:24px;}
+      /* INVESTMENT TABLE */
+      .invest {
+        border: 1px solid var(--line-strong);
+      }
+      .invest-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 22px;
+        border-bottom: 1px solid var(--line);
+      }
+      .invest-row:last-child {
+        border-bottom: none;
+      }
+      .invest-row .label {
+        font-size: 15px;
+      }
+      .invest-row .label small {
+        display: block;
+        color: var(--stone);
+        font-size: 12.5px;
+        margin-top: 2px;
+      }
+      .invest-row .amount {
+        font-family: "Fraunces", serif;
+        font-size: 20px;
+      }
+      .invest-row.total {
+        background: var(--paper-raised);
+      }
+      .invest-row.total .amount {
+        color: var(--brass);
+        font-size: 24px;
+      }
 
-  /* CTA */
-  .cta{
-    text-align:left;
-    padding:56px 0 88px;
-  }
-  .cta h2{font-size:26px;margin-bottom:12px;}
-  .cta p{max-width:52ch;color:#40473f;margin-bottom:26px;}
-  .cta-btn{
-    display:inline-block;
-    font-family:'Inter',sans-serif;
-    font-weight:600;
-    font-size:14.5px;
-    padding:13px 26px;
-    background:var(--ink);
-    color:var(--paper);
-    text-decoration:none;
-    border:1px solid var(--ink);
-  }
-  footer{padding:28px 0 60px;font-size:13px;color:var(--stone);}
-</style>
-</head>
-<body>
-
-<div class="wrap hero">
-  <div class="kicker">Prepared for Nayef Ezz — Property Management &amp; Legal Real Estate</div>
-  <h1>A site built to rank, self-manage, and grow into your next phase.</h1>
-  <p class="lede">This is a working scope, not a pitch deck. It reflects the requirements as you sent them, with the fee restructuring and resources-library change already folded in. Everything below is what actually gets built, in what order, and for what.</p>
-  <div class="meta">
-    <div><strong>14 pages + 2 templates</strong>Current scope</div>
-    <div><strong>WordPress + Elementor + RankMath</strong>Stack</div>
-    <div><strong>4 phases, 5 weeks</strong>Delivery</div>
-  </div>
-
-  <div class="blueprint">
-    <div class="bp-row">
-      <span class="bp-node" style="animation-delay:.05s">Content in WP</span>
-      <span class="bp-arrow" style="animation-delay:.15s">→</span>
-      <span class="bp-node" style="animation-delay:.2s">Server-rendered HTML</span>
-      <span class="bp-arrow" style="animation-delay:.3s">→</span>
-      <span class="bp-node accent" style="animation-delay:.35s">Googlebot / AI crawlers</span>
-    </div>
-    <div class="bp-row" style="margin-top:18px;">
-      <span class="bp-node" style="animation-delay:.45s">RankMath schema</span>
-      <span class="bp-arrow" style="animation-delay:.55s">→</span>
-      <span class="bp-node accent" style="animation-delay:.6s">Rich results / AI citation</span>
-    </div>
-    <div class="bp-row" style="margin-top:18px;">
-      <span class="bp-node" style="animation-delay:.7s">You, in wp-admin</span>
-      <span class="bp-arrow" style="animation-delay:.8s">→</span>
-      <span class="bp-node">Publish + preview</span>
-      <span class="bp-arrow" style="animation-delay:.9s">→</span>
-      <span class="bp-node">No developer, no deploy step</span>
-    </div>
-  </div>
-</div>
-
-<section class="wrap">
-  <div class="eyebrow-label">Architecture</div>
-  <h2>Four decisions, each answering one requirement.</h2>
-  <p class="intro">Nothing here is the default freelancer stack. Each piece maps to something you specifically asked for.</p>
-  <div class="stack">
-    <div class="stack-item">
-      <div class="role">Rankability without JS</div>
-      <div class="tool">WordPress + Elementor</div>
-      <div class="why">Pages render as complete HTML on the server. A crawler reading with JavaScript off sees the same content a visitor does.</div>
-    </div>
-    <div class="stack-item">
-      <div class="role">Structured data</div>
-      <div class="tool">RankMath</div>
-      <div class="why">LocalBusiness, Service, FAQ and Article schema applied per page type, out of the box, no custom development.</div>
-    </div>
-    <div class="stack-item">
-      <div class="role">No servers to run</div>
-      <div class="tool">Managed WP hosting</div>
-      <div class="why">Kinsta or WP Engine. Patching, uptime and backups sit with the host. You get a dashboard, not a server.</div>
-    </div>
-    <div class="stack-item">
-      <div class="role">Self-service calculator</div>
-      <div class="tool">Formidable Forms</div>
-      <div class="why">Fee logic and fields live in a plugin UI you can edit yourself later, not in code only I can touch.</div>
-    </div>
-  </div>
-</section>
-
-<section class="wrap">
-  <div class="eyebrow-label">Sitemap</div>
-  <h2>Fourteen pages, two templates, as corrected.</h2>
-  <p class="intro">Fees now sit inside each service page. Buyer's, seller's and investment guides move into the resources library as articles rather than standalone pages. Click a line to see what's on it.</p>
-
-  <div class="tree" id="tree">
-    <div class="branch">
-      <div class="branch-head" onclick="toggleBranch(this)">
-        <span class="name">Company pages<span class="tag">4 pages</span></span>
-        <span class="chev">›</span>
+      /* CTA */
+      .cta {
+        text-align: left;
+        padding: 56px 0 88px;
+      }
+      .cta h2 {
+        font-size: 26px;
+        margin-bottom: 12px;
+      }
+      .cta p {
+        max-width: 52ch;
+        color: #40473f;
+        margin-bottom: 26px;
+      }
+      .cta-btn {
+        display: inline-block;
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-size: 14.5px;
+        padding: 13px 26px;
+        background: var(--ink);
+        color: var(--paper);
+        text-decoration: none;
+        border: 1px solid var(--ink);
+      }
+      footer {
+        padding: 28px 0 60px;
+        font-size: 13px;
+        color: var(--stone);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap hero">
+      <div class="kicker">
+        Prepared for Nayef — Property Management &amp; Legal Real Estate
       </div>
-      <div class="branch-body">
-        <ul><li>Home</li><li>About</li><li>Contact</li><li>Legal / disclosures</li></ul>
+      <h1>A site built to rank, self-manage, and grow into your next phase.</h1>
+      <p class="lede">
+        This is a working scope, not a pitch deck. It reflects the requirements
+        as you sent them, with the fee restructuring and resources-library
+        change already folded in. Everything below is what actually gets built,
+        in what order, and for what.
+      </p>
+      <div class="meta">
+        <div><strong>14 pages + 2 templates</strong>Current scope</div>
+        <div><strong>WordPress + Elementor + RankMath</strong>Stack</div>
+        <div><strong>4 phases, 5 weeks</strong>Delivery</div>
       </div>
-    </div>
-    <div class="branch">
-      <div class="branch-head" onclick="toggleBranch(this)">
-        <span class="name">Property Management<span class="tag">services + fees + enquiry</span></span>
-        <span class="chev">›</span>
-      </div>
-      <div class="branch-body">
-        <ul><li>Service description and process</li><li>Fee structure, inline on the same page</li><li>Enquiry form, scoped to this service</li></ul>
-      </div>
-    </div>
-    <div class="branch">
-      <div class="branch-head" onclick="toggleBranch(this)">
-        <span class="name">Maintenance &amp; Fitout<span class="tag">services + fees + enquiry</span></span>
-        <span class="chev">›</span>
-      </div>
-      <div class="branch-body">
-        <ul><li>Service description and process</li><li>Fee structure, inline</li><li>Enquiry form</li></ul>
-      </div>
-    </div>
-    <div class="branch">
-      <div class="branch-head" onclick="toggleBranch(this)">
-        <span class="name">Snagging<span class="tag">services + fees + enquiry</span></span>
-        <span class="chev">›</span>
-      </div>
-      <div class="branch-body">
-        <ul><li>Service description and process</li><li>Fee structure, inline</li><li>Enquiry form</li></ul>
-      </div>
-    </div>
-    <div class="branch">
-      <div class="branch-head" onclick="toggleBranch(this)">
-        <span class="name">Tenancy Management<span class="tag">services + fees + enquiry</span></span>
-        <span class="chev">›</span>
-      </div>
-      <div class="branch-body">
-        <ul><li>Service description and process</li><li>Fee structure, inline</li><li>Enquiry form</li></ul>
-      </div>
-    </div>
-    <div class="branch">
-      <div class="branch-head" onclick="toggleBranch(this)">
-        <span class="name">Power of Attorney<span class="tag">services + fees + enquiry</span></span>
-        <span class="chev">›</span>
-      </div>
-      <div class="branch-body">
-        <ul><li>Service description and process</li><li>Fee structure, inline</li><li>Enquiry form</li></ul>
-      </div>
-    </div>
-    <div class="branch">
-      <div class="branch-head" onclick="toggleBranch(this)">
-        <span class="name">Selling a Property<span class="tag">services + fees + enquiry</span></span>
-        <span class="chev">›</span>
-      </div>
-      <div class="branch-body">
-        <ul><li>Service description and process</li><li>Fee structure, inline</li><li>Enquiry form</li></ul>
-      </div>
-    </div>
-    <div class="branch">
-      <div class="branch-head" onclick="toggleBranch(this)">
-        <span class="name">Resources library<span class="tag">template, scales to hundreds</span></span>
-        <span class="chev">›</span>
-      </div>
-      <div class="branch-body">
-        <ul><li>Archive with category and tag filtering</li><li>Article template: buyer, seller and investment guides launch as the first entries</li><li>Related-content and search built in from day one</li></ul>
-      </div>
-    </div>
-    <div class="branch">
-      <div class="branch-head" onclick="toggleBranch(this)">
-        <span class="name">Rental calculator<span class="tag">template</span></span>
-        <span class="chev">›</span>
-      </div>
-      <div class="branch-body">
-        <ul><li>Formidable Forms with calculated fields</li><li>Editable by you: formula, fees, field labels</li></ul>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="wrap">
-  <div class="eyebrow-label">Built for what comes next</div>
-  <h2>The resources system, not just a blog.</h2>
-  <p class="intro">This is the piece worth getting right before build starts, since it's what a later listings integration will plug into.</p>
-  <div class="cms-diagram">
-    <div class="cms-box">
-      <h4>Taxonomy</h4>
-      <p>Categories and tags shared across the library, so an article about tenancy law and one about maintenance costs can both surface under the right filters.</p>
+      <div class="blueprint">
+        <div class="bp-row">
+          <span class="bp-node" style="animation-delay: 0.05s"
+            >Content in WP</span
+          >
+          <span class="bp-arrow" style="animation-delay: 0.15s">→</span>
+          <span class="bp-node" style="animation-delay: 0.2s"
+            >Server-rendered HTML</span
+          >
+          <span class="bp-arrow" style="animation-delay: 0.3s">→</span>
+          <span class="bp-node accent" style="animation-delay: 0.35s"
+            >Googlebot / AI crawlers</span
+          >
+        </div>
+        <div class="bp-row" style="margin-top: 18px">
+          <span class="bp-node" style="animation-delay: 0.45s"
+            >RankMath schema</span
+          >
+          <span class="bp-arrow" style="animation-delay: 0.55s">→</span>
+          <span class="bp-node accent" style="animation-delay: 0.6s"
+            >Rich results / AI citation</span
+          >
+        </div>
+        <div class="bp-row" style="margin-top: 18px">
+          <span class="bp-node" style="animation-delay: 0.7s"
+            >You, in wp-admin</span
+          >
+          <span class="bp-arrow" style="animation-delay: 0.8s">→</span>
+          <span class="bp-node">Publish + preview</span>
+          <span class="bp-arrow" style="animation-delay: 0.9s">→</span>
+          <span class="bp-node">No developer, no deploy step</span>
+        </div>
+      </div>
     </div>
-    <div class="cms-box">
-      <h4>Article template</h4>
-      <p>One reusable layout with SEO fields, schema, and related-content built in, rather than a one-off design per article.</p>
+
+    <section class="wrap">
+      <div class="eyebrow-label">Architecture</div>
+      <h2>Four decisions, each answering one requirement.</h2>
+      <p class="intro">
+        Nothing here is the default freelancer stack. Each piece maps to
+        something you specifically asked for.
+      </p>
+      <div class="stack">
+        <div class="stack-item">
+          <div class="role">Rankability without JS</div>
+          <div class="tool">WordPress + Elementor</div>
+          <div class="why">
+            Pages render as complete HTML on the server. A crawler reading with
+            JavaScript off sees the same content a visitor does.
+          </div>
+        </div>
+        <div class="stack-item">
+          <div class="role">Structured data</div>
+          <div class="tool">RankMath</div>
+          <div class="why">
+            LocalBusiness, Service, FAQ and Article schema applied per page
+            type, out of the box, no custom development.
+          </div>
+        </div>
+        <div class="stack-item">
+          <div class="role">No servers to run</div>
+          <div class="tool">Managed WP hosting</div>
+          <div class="why">
+            Kinsta or WP Engine. Patching, uptime and backups sit with the host.
+            You get a dashboard, not a server.
+          </div>
+        </div>
+        <div class="stack-item">
+          <div class="role">Self-service calculator</div>
+          <div class="tool">Formidable Forms</div>
+          <div class="why">
+            Fee logic and fields live in a plugin UI you can edit yourself
+            later, not in code only I can touch.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="eyebrow-label">Sitemap</div>
+      <h2>Fourteen pages, two templates, as corrected.</h2>
+      <p class="intro">
+        Fees now sit inside each service page. Buyer's, seller's and investment
+        guides move into the resources library as articles rather than
+        standalone pages. Click a line to see what's on it.
+      </p>
+
+      <div class="tree" id="tree">
+        <div class="branch">
+          <div class="branch-head" onclick="toggleBranch(this)">
+            <span class="name"
+              >Company pages<span class="tag">4 pages</span></span
+            >
+            <span class="chev">›</span>
+          </div>
+          <div class="branch-body">
+            <ul>
+              <li>Home</li>
+              <li>About</li>
+              <li>Contact</li>
+              <li>Legal / disclosures</li>
+            </ul>
+          </div>
+        </div>
+        <div class="branch">
+          <div class="branch-head" onclick="toggleBranch(this)">
+            <span class="name"
+              >Property Management<span class="tag"
+                >services + fees + enquiry</span
+              ></span
+            >
+            <span class="chev">›</span>
+          </div>
+          <div class="branch-body">
+            <ul>
+              <li>Service description and process</li>
+              <li>Fee structure, inline on the same page</li>
+              <li>Enquiry form, scoped to this service</li>
+            </ul>
+          </div>
+        </div>
+        <div class="branch">
+          <div class="branch-head" onclick="toggleBranch(this)">
+            <span class="name"
+              >Maintenance &amp; Fitout<span class="tag"
+                >services + fees + enquiry</span
+              ></span
+            >
+            <span class="chev">›</span>
+          </div>
+          <div class="branch-body">
+            <ul>
+              <li>Service description and process</li>
+              <li>Fee structure, inline</li>
+              <li>Enquiry form</li>
+            </ul>
+          </div>
+        </div>
+        <div class="branch">
+          <div class="branch-head" onclick="toggleBranch(this)">
+            <span class="name"
+              >Snagging<span class="tag">services + fees + enquiry</span></span
+            >
+            <span class="chev">›</span>
+          </div>
+          <div class="branch-body">
+            <ul>
+              <li>Service description and process</li>
+              <li>Fee structure, inline</li>
+              <li>Enquiry form</li>
+            </ul>
+          </div>
+        </div>
+        <div class="branch">
+          <div class="branch-head" onclick="toggleBranch(this)">
+            <span class="name"
+              >Tenancy Management<span class="tag"
+                >services + fees + enquiry</span
+              ></span
+            >
+            <span class="chev">›</span>
+          </div>
+          <div class="branch-body">
+            <ul>
+              <li>Service description and process</li>
+              <li>Fee structure, inline</li>
+              <li>Enquiry form</li>
+            </ul>
+          </div>
+        </div>
+        <div class="branch">
+          <div class="branch-head" onclick="toggleBranch(this)">
+            <span class="name"
+              >Power of Attorney<span class="tag"
+                >services + fees + enquiry</span
+              ></span
+            >
+            <span class="chev">›</span>
+          </div>
+          <div class="branch-body">
+            <ul>
+              <li>Service description and process</li>
+              <li>Fee structure, inline</li>
+              <li>Enquiry form</li>
+            </ul>
+          </div>
+        </div>
+        <div class="branch">
+          <div class="branch-head" onclick="toggleBranch(this)">
+            <span class="name"
+              >Selling a Property<span class="tag"
+                >services + fees + enquiry</span
+              ></span
+            >
+            <span class="chev">›</span>
+          </div>
+          <div class="branch-body">
+            <ul>
+              <li>Service description and process</li>
+              <li>Fee structure, inline</li>
+              <li>Enquiry form</li>
+            </ul>
+          </div>
+        </div>
+        <div class="branch">
+          <div class="branch-head" onclick="toggleBranch(this)">
+            <span class="name"
+              >Resources library<span class="tag"
+                >template, scales to hundreds</span
+              ></span
+            >
+            <span class="chev">›</span>
+          </div>
+          <div class="branch-body">
+            <ul>
+              <li>Archive with category and tag filtering</li>
+              <li>
+                Article template: buyer, seller and investment guides launch as
+                the first entries
+              </li>
+              <li>Related-content and search built in from day one</li>
+            </ul>
+          </div>
+        </div>
+        <div class="branch">
+          <div class="branch-head" onclick="toggleBranch(this)">
+            <span class="name"
+              >Rental calculator<span class="tag">template</span></span
+            >
+            <span class="chev">›</span>
+          </div>
+          <div class="branch-body">
+            <ul>
+              <li>Formidable Forms with calculated fields</li>
+              <li>Editable by you: formula, fees, field labels</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="eyebrow-label">Built for what comes next</div>
+      <h2>The resources system, not just a blog.</h2>
+      <p class="intro">
+        This is the piece worth getting right before build starts, since it's
+        what a later listings integration will plug into.
+      </p>
+      <div class="cms-diagram">
+        <div class="cms-box">
+          <h4>Taxonomy</h4>
+          <p>
+            Categories and tags shared across the library, so an article about
+            tenancy law and one about maintenance costs can both surface under
+            the right filters.
+          </p>
+        </div>
+        <div class="cms-box">
+          <h4>Article template</h4>
+          <p>
+            One reusable layout with SEO fields, schema, and related-content
+            built in, rather than a one-off design per article.
+          </p>
+        </div>
+        <div class="cms-box">
+          <h4>Archive</h4>
+          <p>
+            Filterable, paginated, built to stay fast at a few hundred entries
+            rather than a few dozen.
+          </p>
+        </div>
+        <div class="cms-note">
+          If property listings arrive in a later phase, they attach to this same
+          content model, categories, taxonomies, and templates, rather than
+          requiring a rebuild of what's already live and indexed.
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="eyebrow-label">Delivery</div>
+      <h2>Four phases, each ending in something you can check.</h2>
+      <div class="tabs" id="tabs">
+        <button class="tab-btn active" onclick="showTab(0)">
+          Phase 1 · Week 1
+        </button>
+        <button class="tab-btn" onclick="showTab(1)">
+          Phase 2 · Weeks 2–3
+        </button>
+        <button class="tab-btn" onclick="showTab(2)">Phase 3 · Week 4</button>
+        <button class="tab-btn" onclick="showTab(3)">Phase 4 · Week 5</button>
+      </div>
+      <div class="tab-panel active" data-panel="0">
+        <div class="row">
+          <h3>Discovery &amp; Architecture</h3>
+          <span class="price">$100</span>
+        </div>
+        <div class="deliverable">
+          Deliverable: staging skeleton, not public-facing yet
+        </div>
+        <ul>
+          <li>Sitemap and page list finalized against this document</li>
+          <li>Calculator formula and fee logic confirmed with you</li>
+          <li>
+            WordPress, Elementor and RankMath installed on managed hosting
+          </li>
+          <li>Resources library taxonomy and article template structured</li>
+        </ul>
+      </div>
+      <div class="tab-panel" data-panel="1">
+        <div class="row">
+          <h3>Core Service Pages</h3>
+          <span class="price">$700</span>
+        </div>
+        <div class="deliverable">
+          Deliverable: all six service pages live on staging, reviewable
+        </div>
+        <ul>
+          <li>
+            Property management, maintenance/fitout, snagging, tenancy, POA,
+            selling
+          </li>
+          <li>Fees built inline on each page, not as separate pages</li>
+          <li>Enquiry forms scoped per service</li>
+          <li>Schema markup applied per page type</li>
+        </ul>
+      </div>
+      <div class="tab-panel" data-panel="2">
+        <div class="row">
+          <h3>Resources, Calculator, Company Pages</h3>
+          <span class="price">$500</span>
+        </div>
+        <div class="deliverable">
+          Deliverable: feature-complete site on staging
+        </div>
+        <ul>
+          <li>
+            Resources archive live, ready for buyer, seller and investment
+            guides as first articles
+          </li>
+          <li>Rental calculator built and styled to match the site</li>
+          <li>Remaining company pages: home, about, contact, legal</li>
+        </ul>
+      </div>
+      <div class="tab-panel" data-panel="3">
+        <div class="row">
+          <h3>QA, Validation, Training, Launch</h3>
+          <span class="price">$500</span>
+        </div>
+        <div class="deliverable">
+          Deliverable: live site, plus a maintainer who knows their way around
+          it
+        </div>
+        <ul>
+          <li>Cross-device QA and mobile speed pass</li>
+          <li>Structured data validated against Google's Rich Results Test</li>
+          <li>Recorded training on publishing, editing and previewing</li>
+          <li>Domain cutover and go-live</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="eyebrow-label">Handover</div>
+      <h2>Nothing sits in accounts you don't control.</h2>
+      <div class="checklist">
+        <div class="check-item">
+          <span class="mark">✓</span>
+          <p>
+            <strong>Code</strong>Full site export and repository access, yours
+            from day one.
+          </p>
+        </div>
+        <div class="check-item">
+          <span class="mark">✓</span>
+          <p><strong>Hosting</strong>Set up under your billing, not mine.</p>
+        </div>
+        <div class="check-item">
+          <span class="mark">✓</span>
+          <p>
+            <strong>Domain</strong>Registrar access stays with you throughout.
+          </p>
+        </div>
+        <div class="check-item">
+          <span class="mark">✓</span>
+          <p><strong>CMS</strong>Full admin access, no locked-down accounts.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="eyebrow-label">Investment</div>
+      <h2>What's actually being quoted.</h2>
+      <div class="invest">
+        <div class="invest-row">
+          <div class="label">
+            Build, templates, functionality<small
+              >SEO/schema setup, rental calculator, QA and launch</small
+            >
+          </div>
+          <div class="amount">$1,800</div>
+        </div>
+        <div class="invest-row">
+          <div class="label">
+            Initial content entry<small
+              >Optional — I format and load your supplied content across all
+              pages and first articles</small
+            >
+          </div>
+          <div class="amount">+$200</div>
+        </div>
+        <div class="invest-row total">
+          <div class="label">Total, with content entry included</div>
+          <div class="amount">$2,000</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap cta">
+      <h2>What I'd want to walk through on the call.</h2>
+      <p>
+        The taxonomy and CPT structure for the resources library, specifically
+        how it holds up once listings arrive in a later phase. That's the one
+        decision worth getting right before anything else gets built.
+      </p>
     </div>
-    <div class="cms-box">
-      <h4>Archive</h4>
-      <p>Filterable, paginated, built to stay fast at a few hundred entries rather than a few dozen.</p>
-    </div>
-    <div class="cms-note">
-      If property listings arrive in a later phase, they attach to this same content model, categories, taxonomies, and templates, rather than requiring a rebuild of what's already live and indexed.
-    </div>
-  </div>
-</section>
 
-<section class="wrap">
-  <div class="eyebrow-label">Delivery</div>
-  <h2>Four phases, each ending in something you can check.</h2>
-  <div class="tabs" id="tabs">
-    <button class="tab-btn active" onclick="showTab(0)">Phase 1 · Week 1</button>
-    <button class="tab-btn" onclick="showTab(1)">Phase 2 · Weeks 2–3</button>
-    <button class="tab-btn" onclick="showTab(2)">Phase 3 · Week 4</button>
-    <button class="tab-btn" onclick="showTab(3)">Phase 4 · Week 5</button>
-  </div>
-  <div class="tab-panel active" data-panel="0">
-    <div class="row"><h3>Discovery &amp; Architecture</h3><span class="price">$100</span></div>
-    <div class="deliverable">Deliverable: staging skeleton, not public-facing yet</div>
-    <ul>
-      <li>Sitemap and page list finalized against this document</li>
-      <li>Calculator formula and fee logic confirmed with you</li>
-      <li>WordPress, Elementor and RankMath installed on managed hosting</li>
-      <li>Resources library taxonomy and article template structured</li>
-    </ul>
-  </div>
-  <div class="tab-panel" data-panel="1">
-    <div class="row"><h3>Core Service Pages</h3><span class="price">$700</span></div>
-    <div class="deliverable">Deliverable: all six service pages live on staging, reviewable</div>
-    <ul>
-      <li>Property management, maintenance/fitout, snagging, tenancy, POA, selling</li>
-      <li>Fees built inline on each page, not as separate pages</li>
-      <li>Enquiry forms scoped per service</li>
-      <li>Schema markup applied per page type</li>
-    </ul>
-  </div>
-  <div class="tab-panel" data-panel="2">
-    <div class="row"><h3>Resources, Calculator, Company Pages</h3><span class="price">$500</span></div>
-    <div class="deliverable">Deliverable: feature-complete site on staging</div>
-    <ul>
-      <li>Resources archive live, ready for buyer, seller and investment guides as first articles</li>
-      <li>Rental calculator built and styled to match the site</li>
-      <li>Remaining company pages: home, about, contact, legal</li>
-    </ul>
-  </div>
-  <div class="tab-panel" data-panel="3">
-    <div class="row"><h3>QA, Validation, Training, Launch</h3><span class="price">$500</span></div>
-    <div class="deliverable">Deliverable: live site, plus a maintainer who knows their way around it</div>
-    <ul>
-      <li>Cross-device QA and mobile speed pass</li>
-      <li>Structured data validated against Google's Rich Results Test</li>
-      <li>Recorded training on publishing, editing and previewing</li>
-      <li>Domain cutover and go-live</li>
-    </ul>
-  </div>
-</section>
+    <footer class="wrap">
+      Prepared by Muhammad Umer Khan · This document reflects the scope as
+      corrected on 4 September
+    </footer>
 
-<section class="wrap">
-  <div class="eyebrow-label">Handover</div>
-  <h2>Nothing sits in accounts you don't control.</h2>
-  <div class="checklist">
-    <div class="check-item"><span class="mark">✓</span><p><strong>Code</strong>Full site export and repository access, yours from day one.</p></div>
-    <div class="check-item"><span class="mark">✓</span><p><strong>Hosting</strong>Set up under your billing, not mine.</p></div>
-    <div class="check-item"><span class="mark">✓</span><p><strong>Domain</strong>Registrar access stays with you throughout.</p></div>
-    <div class="check-item"><span class="mark">✓</span><p><strong>CMS</strong>Full admin access, no locked-down accounts.</p></div>
-  </div>
-</section>
-
-<section class="wrap">
-  <div class="eyebrow-label">Investment</div>
-  <h2>What's actually being quoted.</h2>
-  <div class="invest">
-    <div class="invest-row">
-      <div class="label">Build, templates, functionality<small>SEO/schema setup, rental calculator, QA and launch</small></div>
-      <div class="amount">$1,800</div>
-    </div>
-    <div class="invest-row">
-      <div class="label">Initial content entry<small>Optional — I format and load your supplied content across all pages and first articles</small></div>
-      <div class="amount">+$200</div>
-    </div>
-    <div class="invest-row total">
-      <div class="label">Total, with content entry included</div>
-      <div class="amount">$2,000</div>
-    </div>
-  </div>
-</section>
-
-<div class="wrap cta">
-  <h2>What I'd want to walk through on the call.</h2>
-  <p>The taxonomy and CPT structure for the resources library, specifically how it holds up once listings arrive in a later phase. That's the one decision worth getting right before anything else gets built.</p>
-</div>
-
-<footer class="wrap">Prepared by Muhammad Umer Khan · This document reflects the scope as corrected on 4 September</footer>
-
-<script>
-function toggleBranch(head){
-  var branch = head.parentElement;
-  var wasOpen = branch.classList.contains('open');
-  document.querySelectorAll('#tree .branch').forEach(function(b){ b.classList.remove('open'); });
-  if(!wasOpen){ branch.classList.add('open'); }
-}
-function showTab(i){
-  document.querySelectorAll('.tab-btn').forEach(function(b,idx){ b.classList.toggle('active', idx===i); });
-  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.toggle('active', p.dataset.panel==String(i)); });
-}
-</script>
-
-</body>
+    <script>
+      function toggleBranch(head) {
+        var branch = head.parentElement;
+        var wasOpen = branch.classList.contains("open");
+        document.querySelectorAll("#tree .branch").forEach(function (b) {
+          b.classList.remove("open");
+        });
+        if (!wasOpen) {
+          branch.classList.add("open");
+        }
+      }
+      function showTab(i) {
+        document.querySelectorAll(".tab-btn").forEach(function (b, idx) {
+          b.classList.toggle("active", idx === i);
+        });
+        document.querySelectorAll(".tab-panel").forEach(function (p) {
+          p.classList.toggle("active", p.dataset.panel == String(i));
+        });
+      }
+    </script>
+  </body>
 </html>
