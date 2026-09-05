@@ -36,8 +36,9 @@
         color: var(--ink);
         font-family: "Inter", sans-serif;
         font-size: 16px;
-        line-height: 1.6;
+        line-height: 1.65;
         -webkit-font-smoothing: antialiased;
+        counter-reset: sec;
       }
       h1,
       h2,
@@ -50,7 +51,7 @@
       .wrap {
         max-width: var(--max);
         margin: 0 auto;
-        padding: 0 28px;
+        padding: 28px;
       }
       a {
         color: var(--teal);
@@ -144,8 +145,9 @@
       }
 
       section {
-        padding: 64px 0;
+        padding: 88px 0;
         border-bottom: 1px solid var(--line);
+        counter-increment: sec;
       }
       section:last-of-type {
         border-bottom: none;
@@ -154,17 +156,25 @@
         font-size: 13px;
         color: var(--brass);
         font-weight: 600;
-        margin-bottom: 10px;
+        margin-bottom: 14px;
+        letter-spacing: 0.02em;
+      }
+      .eyebrow-label::before {
+        content: counter(sec, decimal-leading-zero) " — ";
+        color: var(--stone);
+        font-weight: 600;
       }
       section h2 {
-        font-size: 28px;
-        max-width: 20ch;
-        margin-bottom: 14px;
+        font-size: 29px;
+        max-width: 22ch;
+        margin-bottom: 16px;
+        line-height: 1.28;
       }
       section > .intro {
-        max-width: 60ch;
+        max-width: 62ch;
         color: #40473f;
-        margin-bottom: 36px;
+        margin-bottom: 44px;
+        font-size: 15.5px;
       }
 
       /* ARCHITECTURE STACK */
@@ -177,38 +187,225 @@
       }
       .stack-item {
         background: var(--paper);
-        padding: 22px;
+        padding: 26px 24px;
       }
       .stack-item .role {
         font-size: 12px;
         color: var(--stone);
-        margin-bottom: 6px;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
       }
       .stack-item .tool {
         font-family: "Fraunces", serif;
         font-size: 19px;
-        margin-bottom: 8px;
+        margin-bottom: 10px;
       }
       .stack-item .why {
         font-size: 14px;
         color: #40473f;
+        line-height: 1.55;
+      }
+
+      /* FULL PLUGIN STACK */
+      .plugin-table {
+        border: 1px solid var(--line-strong);
+        margin-top: 8px;
+      }
+      .plugin-group-head {
+        padding: 13px 20px;
+        background: var(--paper-raised);
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: var(--teal);
+        border-bottom: 1px solid var(--line-strong);
+        border-top: 1px solid var(--line-strong);
+      }
+      .plugin-group-head:first-child {
+        border-top: none;
+      }
+      .plugin-row {
+        display: grid;
+        grid-template-columns: 1.3fr 0.6fr 2fr;
+        gap: 20px;
+        padding: 16px 20px;
+        border-bottom: 1px solid var(--line);
+        align-items: baseline;
+      }
+      .plugin-row:last-child {
+        border-bottom: none;
+      }
+      .plugin-row .pname {
+        font-weight: 500;
+        font-size: 14.5px;
+      }
+      .plugin-row .plicense {
+        font-size: 11.5px;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+      }
+      .plicense.free {
+        color: var(--stone);
+      }
+      .plicense.pro {
+        color: var(--brass);
+        font-weight: 600;
+      }
+      .plugin-row .prole {
+        font-size: 13.5px;
+        color: #40473f;
+        line-height: 1.55;
+      }
+      @media (max-width: 680px) {
+        .plugin-row {
+          grid-template-columns: 1fr;
+          gap: 6px;
+        }
+        .plugin-row .plicense {
+          order: 3;
+        }
+      }
+      .license-note {
+        margin-top: 20px;
+        font-size: 13.5px;
+        color: #40473f;
+        border-left: 2px solid var(--brass);
+        padding: 2px 0 2px 18px;
+        line-height: 1.6;
+      }
+
+      /* SEO SCOPE SPLIT */
+      .seo-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1px;
+        background: var(--line-strong);
+        border: 1px solid var(--line-strong);
+        margin-top: 8px;
+      }
+      .seo-col {
+        background: var(--paper);
+        padding: 26px 24px;
+      }
+      .seo-col.included {
+        border-top: 3px solid var(--teal);
+      }
+      .seo-col.excluded {
+        border-top: 3px solid var(--stone);
+      }
+      .seo-col h4 {
+        font-family: "Fraunces", serif;
+        font-weight: 500;
+        font-size: 16.5px;
+        margin-bottom: 14px;
+      }
+      .seo-col ul {
+        margin: 0;
+        padding-left: 18px;
+        font-size: 14px;
+        color: #40473f;
+      }
+      .seo-col li {
+        margin-bottom: 9px;
+        line-height: 1.5;
+      }
+      @media (max-width: 680px) {
+        .seo-split {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* FAQ */
+      .faq details {
+        border-bottom: 1px solid var(--line);
+        padding: 18px 0;
+      }
+      .faq details:first-child {
+        padding-top: 0;
+      }
+      .faq summary {
+        cursor: pointer;
+        font-family: "Fraunces", serif;
+        font-size: 16.5px;
+        font-weight: 500;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+      }
+      .faq summary::-webkit-details-marker {
+        display: none;
+      }
+      .faq summary::after {
+        content: "+";
+        font-family: "Inter", sans-serif;
+        font-size: 20px;
+        color: var(--stone);
+        flex: 0 0 auto;
+      }
+      .faq details[open] summary::after {
+        content: "–";
+      }
+      .faq .faq-answer {
+        margin-top: 14px;
+        font-size: 14.5px;
+        color: #40473f;
+        max-width: 66ch;
+        line-height: 1.65;
+      }
+
+      /* NOTES */
+      .notes-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px 36px;
+      }
+      .note-block h4 {
+        font-family: "Fraunces", serif;
+        font-weight: 500;
+        font-size: 17px;
+        margin-bottom: 12px;
+      }
+      .note-block ul {
+        padding-left: 18px;
+        margin: 0;
+        font-size: 14px;
+        color: #40473f;
+      }
+      .note-block li {
+        margin-bottom: 9px;
+        line-height: 1.5;
+      }
+      .note-block p {
+        font-size: 14px;
+        color: #40473f;
+        margin: 0;
+        line-height: 1.6;
+      }
+      @media (max-width: 680px) {
+        .notes-grid {
+          grid-template-columns: 1fr;
+        }
       }
 
       /* SITEMAP TREE */
       .tree {
         border-left: 1px solid var(--line-strong);
-        margin-left: 6px;
+        margin: 8px 0 0 6px;
       }
       .branch {
         position: relative;
         padding: 0 0 0 26px;
-        margin-bottom: 2px;
+        margin-bottom: 8px;
       }
       .branch::before {
         content: "";
         position: absolute;
         left: -1px;
-        top: 16px;
+        top: 17px;
         width: 20px;
         height: 1px;
         background: var(--line-strong);
@@ -217,7 +414,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 12px 16px;
+        padding: 14px 18px;
         background: var(--paper);
         border: 1px solid var(--line);
         cursor: pointer;
@@ -233,7 +430,7 @@
       .branch-head .tag {
         font-size: 11.5px;
         color: var(--stone);
-        margin-left: 10px;
+        margin-left: 12px;
       }
       .branch-head .chev {
         color: var(--stone);
@@ -247,51 +444,54 @@
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.25s ease;
-        padding-left: 16px;
+        padding-left: 18px;
       }
       .branch.open .branch-body {
-        max-height: 220px;
+        max-height: 240px;
       }
       .branch-body ul {
-        margin: 10px 0 14px;
+        margin: 14px 0 16px;
         padding-left: 18px;
         color: #40473f;
         font-size: 14px;
       }
       .branch-body li {
-        margin-bottom: 5px;
+        margin-bottom: 7px;
+        line-height: 1.5;
       }
 
       /* CONTENT SYSTEM DIAGRAM */
       .cms-diagram {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 14px;
+        gap: 16px;
         margin-top: 8px;
       }
       .cms-box {
         border: 1px solid var(--line-strong);
-        padding: 18px;
+        padding: 22px 20px;
         background: #fbfaf6;
       }
       .cms-box h4 {
         font-family: "Fraunces", serif;
         font-weight: 500;
         font-size: 16px;
-        margin: 0 0 8px;
+        margin: 0 0 10px;
       }
       .cms-box p {
         font-size: 13.5px;
         color: #40473f;
         margin: 0;
+        line-height: 1.55;
       }
       .cms-note {
         grid-column: 1/-1;
         border: 1px dashed var(--brass);
-        padding: 16px 18px;
+        padding: 18px 20px;
         font-size: 14px;
         color: #5b4426;
         background: rgba(169, 130, 79, 0.06);
+        line-height: 1.6;
       }
       @media (max-width: 700px) {
         .cms-diagram {
@@ -302,7 +502,7 @@
       /* PHASES TABS */
       .tabs {
         display: flex;
-        gap: 0;
+        gap: 4px;
         border-bottom: 1px solid var(--line-strong);
         margin-bottom: 0;
         flex-wrap: wrap;
@@ -311,7 +511,7 @@
         font-family: "Inter", sans-serif;
         font-size: 14px;
         font-weight: 500;
-        padding: 14px 18px;
+        padding: 14px 20px;
         background: none;
         border: none;
         color: var(--stone);
@@ -325,7 +525,7 @@
       }
       .tab-panel {
         display: none;
-        padding: 30px 0 0;
+        padding: 34px 0 0;
       }
       .tab-panel.active {
         display: block;
@@ -334,7 +534,7 @@
         display: flex;
         justify-content: space-between;
         align-items: baseline;
-        margin-bottom: 16px;
+        margin-bottom: 8px;
         flex-wrap: wrap;
         gap: 8px;
       }
@@ -349,7 +549,7 @@
       .tab-panel .deliverable {
         font-size: 13px;
         color: var(--stone);
-        margin-bottom: 18px;
+        margin-bottom: 22px;
       }
       .tab-panel ul {
         padding-left: 18px;
@@ -358,18 +558,20 @@
         font-size: 14.5px;
       }
       .tab-panel li {
-        margin-bottom: 7px;
+        margin-bottom: 9px;
+        line-height: 1.5;
       }
 
       /* OWNERSHIP CHECKLIST */
       .checklist {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 16px;
+        gap: 22px;
+        margin-top: 8px;
       }
       .check-item {
         display: flex;
-        gap: 12px;
+        gap: 14px;
         align-items: flex-start;
       }
       .check-item .mark {
@@ -387,23 +589,26 @@
       .check-item p {
         margin: 0;
         font-size: 14.5px;
+        line-height: 1.5;
       }
       .check-item strong {
         display: block;
         font-size: 15px;
-        margin-bottom: 2px;
+        margin-bottom: 3px;
       }
 
       /* INVESTMENT TABLE */
       .invest {
         border: 1px solid var(--line-strong);
+        margin-top: 8px;
       }
       .invest-row {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 18px 22px;
+        padding: 20px 24px;
         border-bottom: 1px solid var(--line);
+        gap: 16px;
       }
       .invest-row:last-child {
         border-bottom: none;
@@ -415,11 +620,13 @@
         display: block;
         color: var(--stone);
         font-size: 12.5px;
-        margin-top: 2px;
+        margin-top: 4px;
+        line-height: 1.5;
       }
       .invest-row .amount {
         font-family: "Fraunces", serif;
         font-size: 20px;
+        white-space: nowrap;
       }
       .invest-row.total {
         background: var(--paper-raised);
@@ -432,16 +639,17 @@
       /* CTA */
       .cta {
         text-align: left;
-        padding: 56px 0 88px;
+        padding: 64px 0 96px;
       }
       .cta h2 {
-        font-size: 26px;
-        margin-bottom: 12px;
+        font-size: 27px;
+        margin-bottom: 14px;
       }
       .cta p {
-        max-width: 52ch;
+        max-width: 54ch;
         color: #40473f;
         margin-bottom: 26px;
+        line-height: 1.6;
       }
       .cta-btn {
         display: inline-block;
@@ -455,16 +663,17 @@
         border: 1px solid var(--ink);
       }
       footer {
-        padding: 28px 0 60px;
+        padding: 32px 0 64px;
         font-size: 13px;
         color: var(--stone);
+        border-top: 1px solid var(--line);
       }
     </style>
   </head>
   <body>
     <div class="wrap hero">
       <div class="kicker">
-        Prepared for Nayef — Property Management &amp; Legal Real Estate
+        Prepared for Nayef Ezz — Property Management &amp; Legal Real Estate
       </div>
       <h1>A site built to rank, self-manage, and grow into your next phase.</h1>
       <p class="lede">
@@ -553,6 +762,158 @@
             Fee logic and fields live in a plugin UI you can edit yourself
             later, not in code only I can touch.
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="eyebrow-label">Full tech stack</div>
+      <h2>Everything the site runs on, named plainly.</h2>
+      <p class="intro">
+        No black boxes. Here's every plugin involved, whether it's free or paid,
+        and what it's actually doing.
+      </p>
+
+      <div class="plugin-table">
+        <div class="plugin-group-head">Core &amp; page building</div>
+        <div class="plugin-row">
+          <div class="pname">WordPress</div>
+          <div class="plicense free">Free</div>
+          <div class="prole">
+            The CMS itself. Open source, no licensing cost, industry standard.
+          </div>
+        </div>
+        <div class="plugin-row">
+          <div class="pname">Elementor Pro</div>
+          <div class="plicense pro">Pro</div>
+          <div class="prole">
+            Page builder. Pro tier needed for theme builder, forms integration
+            and the dynamic templates the resources library depends on.
+          </div>
+        </div>
+
+        <div class="plugin-group-head">SEO &amp; structured data</div>
+        <div class="plugin-row">
+          <div class="pname">RankMath Pro</div>
+          <div class="plicense pro">Pro</div>
+          <div class="prole">
+            Schema markup, meta title/description control per page, sitemap
+            generation. Pro tier unlocks the Service and FAQ schema types your
+            service pages need.
+          </div>
+        </div>
+
+        <div class="plugin-group-head">Forms &amp; calculator</div>
+        <div class="plugin-row">
+          <div class="pname">Formidable Forms</div>
+          <div class="plicense free">Free</div>
+          <div class="prole">Enquiry forms on each service page.</div>
+        </div>
+        <div class="plugin-row">
+          <div class="pname">Formidable Pro (calculated fields add-on)</div>
+          <div class="plicense pro">Pro</div>
+          <div class="prole">
+            Powers the rental calculator with editable formula logic, no code
+            required to update fees later.
+          </div>
+        </div>
+
+        <div class="plugin-group-head">Content system</div>
+        <div class="plugin-row">
+          <div class="pname">Custom Post Type UI</div>
+          <div class="plicense free">Free</div>
+          <div class="prole">
+            Defines the Resources/Guides content type separately from standard
+            blog posts.
+          </div>
+        </div>
+        <div class="plugin-row">
+          <div class="pname">Advanced Custom Fields Pro</div>
+          <div class="plicense pro">Pro</div>
+          <div class="prole">
+            Structured fields for each article: category, related content,
+            schema data. This is what keeps the library organized at scale
+            rather than a flat list of posts.
+          </div>
+        </div>
+
+        <div class="plugin-group-head">Performance, security, backups</div>
+        <div class="plugin-row">
+          <div class="pname">WP Rocket</div>
+          <div class="plicense pro">Pro</div>
+          <div class="prole">
+            Caching and asset optimization for the mobile speed requirement.
+          </div>
+        </div>
+        <div class="plugin-row">
+          <div class="pname">Wordfence</div>
+          <div class="plicense free">Free</div>
+          <div class="prole">
+            Firewall and malware scanning. Baseline security layer alongside
+            host-level protection.
+          </div>
+        </div>
+        <div class="plugin-row">
+          <div class="pname">Managed hosting backups</div>
+          <div class="plicense free">Included</div>
+          <div class="prole">
+            Kinsta/WP Engine include automated daily backups and staging
+            environments as part of the plan, not a separate plugin.
+          </div>
+        </div>
+      </div>
+
+      <p class="license-note">
+        Pro plugin licenses are purchased under your accounts, not mine, so they
+        renew under your ownership after handover. Approximate combined annual
+        cost across all pro licenses: $250–350/year, separate from hosting and
+        not part of the $1,800 build fee. Exact figures once we confirm which
+        host tier you land on.
+      </p>
+    </section>
+
+    <section class="wrap">
+      <div class="eyebrow-label">SEO scope</div>
+      <h2>What this phase covers, and what it deliberately doesn't.</h2>
+      <p class="intro">
+        Technical SEO is built into the site from day one. Full SEO, the kind
+        that involves ongoing strategy and content, is a different engagement
+        with a different skillset, and I'd rather say that plainly than blur it
+        into this quote.
+      </p>
+      <div class="seo-split">
+        <div class="seo-col included">
+          <h4>Included in this build</h4>
+          <ul>
+            <li>
+              Schema markup per page type (LocalBusiness, Service, FAQ, Article)
+            </li>
+            <li>
+              Editable meta titles and descriptions on every page, no developer
+              needed
+            </li>
+            <li>
+              Clean URL structure and internal linking between services and
+              related guides
+            </li>
+            <li>
+              XML sitemap, robots.txt, and Rich Results validation before launch
+            </li>
+            <li>
+              Mobile speed optimization and server-rendered content for crawler
+              access
+            </li>
+          </ul>
+        </div>
+        <div class="seo-col excluded">
+          <h4>Out of scope, separate engagement</h4>
+          <ul>
+            <li>Keyword research and content strategy</li>
+            <li>Writing or commissioning the guides and articles themselves</li>
+            <li>Link building or outreach</li>
+            <li>Monthly ranking reports or ongoing optimization</li>
+            <li>Paid search or ad campaign management</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -894,6 +1255,152 @@
           <div class="label">Total, with content entry included</div>
           <div class="amount">$2,000</div>
         </div>
+      </div>
+      <p class="license-note">
+        Pro plugin licenses (~$250–350/year) and hosting (~$20–35/month on
+        Kinsta's entry tier) are billed directly to your accounts, ongoing,
+        separate from the figures above. Not a cost I collect or mark up.
+      </p>
+    </section>
+
+    <section class="wrap">
+      <div class="eyebrow-label">Notes &amp; assumptions</div>
+      <h2>The fine print, upfront rather than discovered later.</h2>
+      <div class="notes-grid">
+        <div class="note-block">
+          <h4>Revisions</h4>
+          <p>
+            Each phase includes one structured round of revisions on that
+            phase's deliverable before we move forward. Changes to a phase
+            already signed off, once later phases have built on top of it, are
+            scoped and quoted separately, since they carry rework cost
+            downstream.
+          </p>
+        </div>
+        <div class="note-block">
+          <h4>What's assumed</h4>
+          <ul>
+            <li>
+              You supply written content and images for all 14 pages, or approve
+              the $200 add-on for me to enter it
+            </li>
+            <li>
+              Brand assets (logo, colors) are provided or we default to a clean
+              neutral palette pending your branding decision
+            </li>
+            <li>
+              Domain and hosting account are set up under your billing before
+              Phase 1 starts
+            </li>
+          </ul>
+        </div>
+        <div class="note-block">
+          <h4>Explicitly out of scope this phase</h4>
+          <ul>
+            <li>
+              Property listings, search, user accounts, payments, matching your
+              original brief
+            </li>
+            <li>Multi-language support, unless flagged before Phase 1</li>
+            <li>Paid ad landing pages or campaign-specific templates</li>
+          </ul>
+        </div>
+        <div class="note-block">
+          <h4>Support after launch</h4>
+          <p>
+            Bug fixes tied to my original build are free for 30 days
+            post-launch. After that, hourly or a monthly retainer sized around
+            your actual publishing cadence once we see it in practice.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="eyebrow-label">Questions worth answering now</div>
+      <h2>What you're likely already wondering.</h2>
+      <p class="intro">
+        Anticipated rather than waiting for the call, so we can spend that time
+        on decisions instead of logistics.
+      </p>
+      <div class="faq">
+        <details>
+          <summary>
+            Why WordPress instead of a custom-coded or headless build?
+          </summary>
+          <p class="faq-answer">
+            Headless buys you speed you don't need at this scale and costs you
+            the "no developer, no deploy step" requirement you specifically
+            asked for. WordPress with server-rendered pages gets you the
+            crawler-readability and mobile speed you need, while keeping every
+            edit inside a dashboard you control.
+          </p>
+        </details>
+        <details>
+          <summary>
+            Can I really edit everything myself, including titles and meta
+            descriptions?
+          </summary>
+          <p class="faq-answer">
+            Yes. RankMath puts a title and description field directly on every
+            page and article's edit screen. No code, no developer, no deploy
+            step, exactly as specified in your brief.
+          </p>
+        </details>
+        <details>
+          <summary>
+            What happens if I want to add a new service category after launch?
+          </summary>
+          <p class="faq-answer">
+            A new service page follows the same template as the six built in
+            Phase 2, so you or I can add one without touching the underlying
+            structure. If you want it built for you post-launch, that's a small
+            hourly task, not a re-scope.
+          </p>
+        </details>
+        <details>
+          <summary>
+            If I bring in a different developer later, is the site portable?
+          </summary>
+          <p class="faq-answer">
+            Yes. WordPress with Elementor is one of the most widely supported
+            combinations available, and since code, hosting and domain all sit
+            in your accounts from day one, any developer can pick this up
+            without needing anything from me.
+          </p>
+        </details>
+        <details>
+          <summary>
+            What if a phase runs into revisions beyond what's included?
+          </summary>
+          <p class="faq-answer">
+            One structured revision round is built into each phase's price.
+            Anything beyond that gets scoped and quoted as a small add-on before
+            I start it, never billed after the fact without your sign-off.
+          </p>
+        </details>
+        <details>
+          <summary>
+            Does structured data actually guarantee AI or rich-result
+            visibility?
+          </summary>
+          <p class="faq-answer">
+            No, and I wouldn't want to imply that. Schema makes you eligible for
+            rich results and easier for AI systems to parse accurately. Whether
+            you rank or get cited depends on content quality and competition,
+            which is why full SEO is scoped separately.
+          </p>
+        </details>
+        <details>
+          <summary>
+            What does the resources library cost me to maintain long-term?
+          </summary>
+          <p class="faq-answer">
+            Nothing beyond hosting and the plugin licenses already listed.
+            Publishing a new article is the same as writing a page in any CMS,
+            no per-article cost, no plugin limit on volume.
+          </p>
+        </details>
       </div>
     </section>
 
