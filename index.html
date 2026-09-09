@@ -679,29 +679,32 @@
       <div class="kicker">
         Prepared for Nayef Ezz — Property Management &amp; Legal Real Estate
       </div>
-      <h1>A site built to rank, self-manage, and grow into your next phase.</h1>
+      <h1>
+        A site built to rank fast, run itself, and never depend on one person.
+      </h1>
       <p class="lede">
-        This is a working scope, not a pitch deck. It reflects the requirements
-        as you sent them, with the fee restructuring, resources-library change,
-        and revised pricing with branding included already folded in.
-        Everything below is what actually gets built, in what order, and for
-        what.
+        This is a working scope, not a pitch deck. It shows exactly what gets
+        built, in what order, for what price. It also covers the two things you
+        asked about directly: what happens to this site if I'm ever unavailable,
+        and how ranking gets handled beyond the build itself.
       </p>
       <div class="meta">
         <div><strong>14 pages + 2 templates</strong>Current scope</div>
-        <div><strong>WordPress + Elementor + RankMath</strong>Stack</div>
-        <div><strong>4 phases, 5 weeks</strong>Delivery</div>
-        <div><strong>Branding included</strong>Logo, color/type, card &amp; letterhead</div>
+        <div><strong>Next.js + Sanity + Vercel</strong>Stack</div>
+        <div>
+          <strong>90+ Lighthouse, guaranteed</strong>Verified before launch
+        </div>
+        <div><strong>$1,300 fixed</strong>Branding included</div>
       </div>
 
       <div class="blueprint">
         <div class="bp-row">
           <span class="bp-node" style="animation-delay: 0.05s"
-            >Content in WP</span
+            >Content in Sanity</span
           >
           <span class="bp-arrow" style="animation-delay: 0.15s">→</span>
           <span class="bp-node" style="animation-delay: 0.2s"
-            >Server-rendered HTML</span
+            >Static HTML, built ahead of time</span
           >
           <span class="bp-arrow" style="animation-delay: 0.3s">→</span>
           <span class="bp-node accent" style="animation-delay: 0.35s"
@@ -710,7 +713,7 @@
         </div>
         <div class="bp-row" style="margin-top: 18px">
           <span class="bp-node" style="animation-delay: 0.45s"
-            >RankMath schema</span
+            >Schema written into every page</span
           >
           <span class="bp-arrow" style="animation-delay: 0.55s">→</span>
           <span class="bp-node accent" style="animation-delay: 0.6s"
@@ -719,54 +722,57 @@
         </div>
         <div class="bp-row" style="margin-top: 18px">
           <span class="bp-node" style="animation-delay: 0.7s"
-            >You, in wp-admin</span
+            >You, in Sanity Studio</span
           >
           <span class="bp-arrow" style="animation-delay: 0.8s">→</span>
           <span class="bp-node">Publish + preview</span>
           <span class="bp-arrow" style="animation-delay: 0.9s">→</span>
-          <span class="bp-node">No developer, no deploy step</span>
+          <span class="bp-node">Live in minutes, no developer needed</span>
         </div>
       </div>
     </div>
 
     <section class="wrap">
       <div class="eyebrow-label">Architecture</div>
-      <h2>Four decisions, each answering one requirement.</h2>
+      <h2>Four decisions, each built around what matters most to you.</h2>
       <p class="intro">
-        Nothing here is the default freelancer stack. Each piece maps to
-        something you specifically asked for.
+        You told me plainly what you care about: search visibility, being cited
+        by AI, and credibility. This stack is built around that, not around
+        what's easiest for me to build.
       </p>
       <div class="stack">
         <div class="stack-item">
-          <div class="role">Rankability without JS</div>
-          <div class="tool">WordPress + Elementor</div>
+          <div class="role">Speed &amp; rankability</div>
+          <div class="tool">Next.js (static build)</div>
           <div class="why">
-            Pages render as complete HTML on the server. A crawler reading with
-            JavaScript off sees the same content a visitor does.
+            Every page is built as plain HTML before anyone visits it. Nothing
+            loads or waits at request time, which is what pushes Lighthouse
+            scores into the 90s and 100 by default, not by luck.
           </div>
         </div>
         <div class="stack-item">
           <div class="role">Structured data</div>
-          <div class="tool">RankMath</div>
+          <div class="tool">Sanity + schema markup</div>
           <div class="why">
-            LocalBusiness, Service, FAQ and Article schema applied per page
-            type, out of the box, no custom development.
+            LocalBusiness, Service, FAQ and Article schema written into each
+            page type, so search engines and AI tools can read your content
+            correctly.
           </div>
         </div>
         <div class="stack-item">
           <div class="role">No servers to run</div>
-          <div class="tool">Managed WP hosting</div>
+          <div class="tool">Vercel hosting</div>
           <div class="why">
-            Kinsta or WP Engine. Patching, uptime and backups sit with the host.
-            You get a dashboard, not a server.
+            Deploys, scaling and SSL are handled automatically. You get a
+            dashboard, not a server to patch or watch.
           </div>
         </div>
         <div class="stack-item">
           <div class="role">Self-service calculator</div>
-          <div class="tool">Formidable Forms</div>
+          <div class="tool">Sanity-driven fields</div>
           <div class="why">
-            Fee logic and fields live in a plugin UI you can edit yourself
-            later, not in code only I can touch.
+            The DLD-index formula and fees live in editable fields in Sanity
+            Studio, not buried in code, so you can update them yourself later.
           </div>
         </div>
       </div>
@@ -776,117 +782,66 @@
       <div class="eyebrow-label">Full tech stack</div>
       <h2>Everything the site runs on, named plainly.</h2>
       <p class="intro">
-        No black boxes. Here's every plugin involved, whether it's free or paid,
-        and what it's actually doing.
+        No black boxes, and nothing tied to one plugin ecosystem. Here's every
+        piece, what it costs, and what it does.
       </p>
 
       <div class="plugin-table">
-        <div class="plugin-group-head">Core &amp; page building</div>
+        <div class="plugin-group-head">Frontend &amp; hosting</div>
         <div class="plugin-row">
-          <div class="pname">WordPress</div>
-          <div class="plicense free">Free</div>
+          <div class="pname">Next.js</div>
+          <div class="plicense free">Free, open source</div>
           <div class="prole">
-            The CMS itself. Open source, no licensing cost, industry standard.
+            The framework the whole site is built on. One of the most widely
+            used tools in web development, so any developer can pick it up
+            later.
           </div>
         </div>
         <div class="plugin-row">
-          <div class="pname">Elementor Pro</div>
-          <div class="plicense pro">Pro</div>
+          <div class="pname">Vercel</div>
+          <div class="plicense free">Free tier</div>
           <div class="prole">
-            Page builder. Pro tier needed for theme builder, forms integration
-            and the dynamic templates the resources library depends on.
-          </div>
-        </div>
-
-        <div class="plugin-group-head">SEO &amp; structured data</div>
-        <div class="plugin-row">
-          <div class="pname">RankMath Pro</div>
-          <div class="plicense pro">Pro</div>
-          <div class="prole">
-            Schema markup, meta title/description control per page, sitemap
-            generation. Pro tier unlocks the Service and FAQ schema types your
-            service pages need.
+            Hosts the site and handles deploys, scaling and SSL certificates
+            automatically. Covers this project comfortably at no cost.
           </div>
         </div>
 
-        <div class="plugin-group-head">Forms &amp; calculator</div>
+        <div class="plugin-group-head">Content &amp; editing</div>
         <div class="plugin-row">
-          <div class="pname">Formidable Forms</div>
-          <div class="plicense free">Free</div>
-          <div class="prole">Enquiry forms on each service page.</div>
-        </div>
-        <div class="plugin-row">
-          <div class="pname">Formidable Pro (calculated fields add-on)</div>
-          <div class="plicense pro">Pro</div>
+          <div class="pname">Sanity</div>
+          <div class="plicense free">Free tier</div>
           <div class="prole">
-            Powers the rental calculator with editable formula logic, no code
-            required to update fees later.
+            Where your content lives. Pages, guides, fees and the calculator
+            fields are all edited here, in a clean interface, no code.
           </div>
         </div>
 
-        <div class="plugin-group-head">Content system</div>
+        <div class="plugin-group-head">Calculator</div>
         <div class="plugin-row">
-          <div class="pname">Custom Post Type UI</div>
-          <div class="plicense free">Free</div>
+          <div class="pname">Custom calculator component</div>
+          <div class="plicense free">Built once, no license</div>
           <div class="prole">
-            Defines the Resources/Guides content type separately from standard
-            blog posts, with categories and tags for filtering.
-          </div>
-        </div>
-        <div class="plugin-row">
-          <div class="pname">Advanced Custom Fields Pro</div>
-          <div class="plicense addon">Later add-on</div>
-          <div class="prole">
-            Not installed at launch. Categories and tags comfortably organize
-            a few hundred articles on their own. Add this when you want
-            per-article related-content and custom schema fields at higher
-            publishing volume, a fast add-on, not a rebuild.
-          </div>
-        </div>
-
-        <div class="plugin-group-head">Performance, security, backups</div>
-        <div class="plugin-row">
-          <div class="pname">WP Rocket</div>
-          <div class="plicense pro">Pro</div>
-          <div class="prole">
-            Caching and asset optimization for the mobile speed requirement.
-          </div>
-        </div>
-        <div class="plugin-row">
-          <div class="pname">Wordfence</div>
-          <div class="plicense free">Free</div>
-          <div class="prole">
-            Firewall and malware scanning. Baseline security layer alongside
-            host-level protection.
-          </div>
-        </div>
-        <div class="plugin-row">
-          <div class="pname">Managed hosting backups</div>
-          <div class="plicense free">Included</div>
-          <div class="prole">
-            Kinsta/WP Engine include automated daily backups and staging
-            environments as part of the plan, not a separate plugin.
+            Built directly into the site rather than a paid plugin. Fee logic
+            and fields are editable by you through Sanity afterward.
           </div>
         </div>
       </div>
 
       <p class="license-note">
-        Pro plugin licenses are purchased under your accounts, not mine, so they
-        renew under your ownership after handover. Approximate combined annual
-        cost across the pro licenses running at launch: $180–250/year,
-        separate from hosting and not part of the $1,500 fee. Advanced Custom
-        Fields Pro adds roughly $50/year only once you bring it in as an
-        add-on. Exact figures once we confirm which host tier you land on.
+        No monthly plugin licenses, and no hosting bill at this project's size.
+        Running cost is close to $0/month. If traffic later grows past the free
+        tier (a good problem to have), Vercel's paid tier is about $20/month,
+        billed straight to your own account, never marked up or collected by me.
       </p>
     </section>
 
     <section class="wrap">
       <div class="eyebrow-label">SEO scope</div>
-      <h2>What this phase covers, and what it deliberately doesn't.</h2>
+      <h2>What's built in, what's separate, and who handles the rest.</h2>
       <p class="intro">
-        Technical SEO is built into the site from day one. Full SEO, the kind
-        that involves ongoing strategy and content, is a different engagement
-        with a different skillset, and I'd rather say that plainly than blur it
+        Technical SEO is built into the site from day one. Ongoing SEO, the kind
+        that needs strategy and fresh content month after month, is a different
+        job with a different skill set. I'd rather say that plainly than blur it
         into this quote.
       </p>
       <div class="seo-split">
@@ -908,22 +863,27 @@
               XML sitemap, robots.txt, and Rich Results validation before launch
             </li>
             <li>
-              Mobile speed optimization and server-rendered content for crawler
-              access
+              90+ Lighthouse mobile and desktop score, verified on your live
+              content before the final milestone releases
             </li>
           </ul>
         </div>
         <div class="seo-col excluded">
-          <h4>Out of scope, separate engagement</h4>
+          <h4>Ongoing SEO, a separate track</h4>
           <ul>
             <li>Keyword research and content strategy</li>
             <li>Writing or commissioning the guides and articles themselves</li>
             <li>Link building or outreach</li>
             <li>Monthly ranking reports or ongoing optimization</li>
-            <li>Paid search or ad campaign management</li>
           </ul>
         </div>
       </div>
+      <p class="license-note">
+        You don't have to source this separately if you'd rather not. I work
+        regularly with colleagues who handle SEO strategy and ranking work on
+        client sites, so if you want that side covered too, it can be picked up
+        by people who already know this site, not a cold start with someone new.
+      </p>
     </section>
 
     <section class="wrap">
@@ -1081,7 +1041,7 @@
           </div>
           <div class="branch-body">
             <ul>
-              <li>Formidable Forms with calculated fields</li>
+              <li>Built-in calculator component, tied to the DLD index</li>
               <li>Editable by you: formula, fees, field labels</li>
             </ul>
           </div>
@@ -1109,9 +1069,9 @@
         <div class="cms-box">
           <h4>Article template</h4>
           <p>
-            One reusable layout with SEO fields and schema built in, rather
-            than a one-off design per article. Related-content pulls from
-            shared category/tag matches until per-article fields are added.
+            One reusable layout with SEO fields and schema built in, rather than
+            a one-off design per article. Related-content pulls from shared
+            category/tag matches until per-article fields are added.
           </p>
         </div>
         <div class="cms-box">
@@ -1122,12 +1082,11 @@
           </p>
         </div>
         <div class="cms-note">
-          If property listings arrive in a later phase, they attach to this same
-          content model, post type, categories and templates, rather than
-          requiring a rebuild of what's already live and indexed. Advanced
-          Custom Fields Pro, for related-content and per-article schema, drops
-          in on top of this structure whenever you're ready for it, a fast
-          add-on, not a rebuild.
+          If property listings arrive in a later phase, they plug into this same
+          content model, categories and templates, instead of requiring a
+          rebuild of pages that are already live and indexed. Extra fields for
+          related content and per-article detail can be added on top of this
+          structure whenever you need them, a quick addition, not a rebuild.
         </div>
       </div>
     </section>
@@ -1148,7 +1107,7 @@
       <div class="tab-panel active" data-panel="0">
         <div class="row">
           <h3>Discovery, Architecture &amp; Brand Direction</h3>
-          <span class="price">$150</span>
+          <span class="price">$200</span>
         </div>
         <div class="deliverable">
           Deliverable: staging skeleton and brand direction, not public-facing
@@ -1158,19 +1117,22 @@
           <li>Sitemap and page list finalized against this document</li>
           <li>Calculator formula and fee logic confirmed with you</li>
           <li>
-            WordPress, Elementor and RankMath installed on managed hosting
+            Next.js project set up, connected to Sanity and Vercel under your
+            accounts
           </li>
           <li>
             Resources library set up with categories/tags taxonomy and article
             template
           </li>
-          <li>Logo directions and color/type system drafted for your sign-off</li>
+          <li>
+            Logo directions and color/type system drafted for your sign-off
+          </li>
         </ul>
       </div>
       <div class="tab-panel" data-panel="1">
         <div class="row">
           <h3>Core Service Pages</h3>
-          <span class="price">$650</span>
+          <span class="price">$500</span>
         </div>
         <div class="deliverable">
           Deliverable: all six service pages live on staging, reviewable
@@ -1188,7 +1150,7 @@
       <div class="tab-panel" data-panel="2">
         <div class="row">
           <h3>Resources, Calculator, Company Pages &amp; Brand Finalization</h3>
-          <span class="price">$450</span>
+          <span class="price">$300</span>
         </div>
         <div class="deliverable">
           Deliverable: feature-complete site on staging, brand assets ready to
@@ -1210,15 +1172,20 @@
       <div class="tab-panel" data-panel="3">
         <div class="row">
           <h3>QA, Validation, Training, Launch</h3>
-          <span class="price">$250</span>
+          <span class="price">$300</span>
         </div>
         <div class="deliverable">
-          Deliverable: live site, plus a maintainer who knows their way around
-          it
+          Deliverable: live site, 90+ Lighthouse verified, plus a training
+          session so you're fully comfortable running it
         </div>
         <ul>
           <li>Cross-device QA and mobile speed pass</li>
           <li>Structured data validated against Google's Rich Results Test</li>
+          <li>
+            90+ Lighthouse mobile and desktop, checked on PageSpeed Insights
+            with your real content, on the homepage, a service page and a guide
+            article
+          </li>
           <li>
             Recorded training on publishing, editing, previewing, and entering
             your own content across the 14 pages and first articles
@@ -1235,13 +1202,16 @@
         <div class="check-item">
           <span class="mark">✓</span>
           <p>
-            <strong>Code</strong>Full site export and repository access, yours
-            from day one.
+            <strong>Code</strong>Lives in a GitHub repo under your account from
+            day one, not mine.
           </p>
         </div>
         <div class="check-item">
           <span class="mark">✓</span>
-          <p><strong>Hosting</strong>Set up under your billing, not mine.</p>
+          <p>
+            <strong>Hosting</strong>Vercel account set up under your billing,
+            not mine.
+          </p>
         </div>
         <div class="check-item">
           <span class="mark">✓</span>
@@ -1251,7 +1221,10 @@
         </div>
         <div class="check-item">
           <span class="mark">✓</span>
-          <p><strong>CMS</strong>Full admin access, no locked-down accounts.</p>
+          <p>
+            <strong>CMS</strong>Full Sanity admin access, no locked-down
+            accounts.
+          </p>
         </div>
       </div>
     </section>
@@ -1264,10 +1237,10 @@
           <div class="label">
             Website build, templates, functionality<small
               >SEO/schema setup, resources library, rental calculator, QA and
-              launch</small
+              launch, initial content population</small
             >
           </div>
-          <div class="amount">$1,200</div>
+          <div class="amount">$1,000</div>
         </div>
         <div class="invest-row">
           <div class="label">
@@ -1280,20 +1253,20 @@
         </div>
         <div class="invest-row total">
           <div class="label">Total, fixed</div>
-          <div class="amount">$1,500</div>
+          <div class="amount">$1,300</div>
         </div>
       </div>
       <p class="license-note">
-        You populate the 14 pages and first articles yourself through the CMS,
-        the Phase 4 training session walks through exactly how. Straightforward
-        once the templates are in place, and it's what you originally
-        described wanting.
+        You populate the 14 pages and first articles yourself through Sanity
+        Studio, the Phase 4 training session walks through exactly how.
+        Straightforward once the templates are in place, and it's what you
+        originally described wanting.
       </p>
       <p class="license-note">
-        Pro plugin licenses (~$180–250/year at launch) and hosting (~$20–35/
-        month on Kinsta's entry tier) are billed directly to your accounts,
-        ongoing, separate from the figures above. Not a cost I collect or
-        mark up.
+        No Pro plugin licenses and no hosting bill at this project's size.
+        Running cost is close to $0/month, billed directly to your own Vercel
+        and Sanity accounts if it's ever needed, never collected or marked up by
+        me.
       </p>
     </section>
 
@@ -1315,8 +1288,9 @@
           <h4>What's assumed</h4>
           <ul>
             <li>
-              You supply written content and images for all 14 pages and
-              first articles, and enter them yourself through the CMS
+              You supply written content and images for all 14 pages and first
+              articles; initial population is included, ongoing entry happens
+              through Sanity Studio
             </li>
             <li>
               Logo, color/type system, and business card/letterhead templates
@@ -1324,8 +1298,8 @@
               Investment section
             </li>
             <li>
-              Domain and hosting account are set up under your billing before
-              Phase 1 starts
+              Domain, Vercel and Sanity accounts are set up under your name
+              before Phase 1 starts
             </li>
           </ul>
         </div>
@@ -1338,8 +1312,7 @@
             </li>
             <li>
               Advanced per-article structured fields (related content, custom
-              schema via ACF Pro), a fast add-on once you're publishing at
-              volume
+              schema), a fast add-on once you're publishing at volume
             </li>
             <li>Multi-language support, unless flagged before Phase 1</li>
             <li>Paid ad landing pages or campaign-specific templates</li>
@@ -1348,9 +1321,10 @@
         <div class="note-block">
           <h4>Support after launch</h4>
           <p>
-            Bug fixes tied to my original build are free for 30 days
-            post-launch. After that, hourly or a monthly retainer sized around
-            your actual publishing cadence once we see it in practice.
+            Bug fixes tied to my original build are free for 60 days
+            post-launch, extended from the usual 30 so you have real time to
+            test the handover. After that, hourly or a monthly retainer sized
+            around your actual publishing cadence once we see it in practice.
           </p>
         </div>
       </div>
@@ -1366,14 +1340,44 @@
       <div class="faq">
         <details>
           <summary>
-            Why WordPress instead of a custom-coded or headless build?
+            What happens to this site if you're not around one day?
           </summary>
           <p class="faq-answer">
-            Headless buys you speed you don't need at this scale and costs you
-            the "no developer, no deploy step" requirement you specifically
-            asked for. WordPress with server-rendered pages gets you the
-            crawler-readability and mobile speed you need, while keeping every
-            edit inside a dashboard you control.
+            This is the question that matters most on a site you'll own for
+            years, so here's the direct answer. Next.js and Sanity are two of
+            the most widely used tools in web development today, not something
+            only I understand. The code sits in a GitHub repo under your
+            account, hosting and the CMS sit under your accounts, and you'll get
+            a written setup guide at launch. Any competent Next.js developer can
+            read this project and understand it within a day, because nothing
+            about it is personal or undocumented. The pool of people who could
+            pick this up is larger than it would be for a one-off custom
+            page-builder setup, not smaller.
+          </p>
+        </details>
+        <details>
+          <summary>
+            Who handles ranking and SEO after the site is built?
+          </summary>
+          <p class="faq-answer">
+            The build covers technical SEO: schema, clean URLs, fast pages,
+            editable titles and descriptions. Ongoing ranking work, content
+            strategy and optimization, is a separate skill. I'm not solo on that
+            side either: I work regularly with colleagues who handle SEO
+            strategy on client sites, so if you want that covered, it can be
+            picked up by people who already know this site, not a new team
+            starting from scratch.
+          </p>
+        </details>
+        <details>
+          <summary>Why Next.js and Sanity instead of WordPress?</summary>
+          <p class="faq-answer">
+            You told me the real priority is search visibility, AI citation and
+            credibility, not just easy editing. This stack gets you a faster
+            site by default, because pages are built as plain files ahead of
+            time instead of being assembled when a visitor arrives. You still
+            get an easy, no-code editing screen, in Sanity Studio, for every
+            page and article.
           </p>
         </details>
         <details>
@@ -1382,9 +1386,9 @@
             descriptions?
           </summary>
           <p class="faq-answer">
-            Yes. RankMath puts a title and description field directly on every
-            page and article's edit screen. No code, no developer, no deploy
-            step, exactly as specified in your brief.
+            Yes. Every page and article has a title and description field right
+            in Sanity Studio. No code, no developer, no deploy step, exactly as
+            you asked for.
           </p>
         </details>
         <details>
@@ -1393,20 +1397,9 @@
           </summary>
           <p class="faq-answer">
             A new service page follows the same template as the six built in
-            Phase 2, so you or I can add one without touching the underlying
-            structure. If you want it built for you post-launch, that's a small
-            hourly task, not a re-scope.
-          </p>
-        </details>
-        <details>
-          <summary>
-            If I bring in a different developer later, is the site portable?
-          </summary>
-          <p class="faq-answer">
-            Yes. WordPress with Elementor is one of the most widely supported
-            combinations available, and since code, hosting and domain all sit
-            in your accounts from day one, any developer can pick this up
-            without needing anything from me.
+            Phase 2, so you or a developer can add one without touching the
+            structure underneath. If you'd like it built for you post-launch,
+            that's a small hourly task, not a re-scope.
           </p>
         </details>
         <details>
@@ -1426,9 +1419,9 @@
           </summary>
           <p class="faq-answer">
             No, and I wouldn't want to imply that. Schema makes you eligible for
-            rich results and easier for AI systems to parse accurately. Whether
-            you rank or get cited depends on content quality and competition,
-            which is why full SEO is scoped separately.
+            rich results and easier for AI systems to read correctly. Whether
+            you actually rank or get cited depends on content quality and
+            competition, which is why ongoing SEO is its own track.
           </p>
         </details>
         <details>
@@ -1436,23 +1429,18 @@
             What does the resources library cost me to maintain long-term?
           </summary>
           <p class="faq-answer">
-            Nothing beyond hosting and the plugin licenses already listed.
-            Publishing a new article is the same as writing a page in any CMS,
-            no per-article cost, no plugin limit on volume.
+            Nothing beyond what's already listed. Sanity's free tier covers this
+            project's scale with real headroom. Publishing a new article costs
+            nothing extra, no per-article fee, no plugin limit on volume.
           </p>
         </details>
         <details>
-          <summary>
-            Why categories and tags instead of Advanced Custom Fields Pro from
-            day one?
-          </summary>
+          <summary>What exactly is the 90+ Lighthouse commitment?</summary>
           <p class="faq-answer">
-            Categories and tags comfortably organize a few hundred articles on
-            their own, and it's one less Pro license running before you've
-            published anything. Related-content and per-article schema are
-            genuinely useful once you're publishing at real volume, at which
-            point ACF Pro drops onto this same structure as a fast add-on, not
-            a rebuild.
+            A 90 or higher score, checked on Google's PageSpeed Insights, on the
+            live site with your real content and images already loaded, on the
+            homepage, one service page, and one guide article. The final
+            milestone doesn't release until it passes.
           </p>
         </details>
         <details>
@@ -1468,17 +1456,18 @@
     </section>
 
     <div class="wrap cta">
-      <h2>What I'd want to walk through on the call.</h2>
+      <h2>Ready when you are.</h2>
       <p>
-        The taxonomy and CPT structure for the resources library, specifically
-        how it holds up once listings arrive in a later phase. That's the one
-        decision worth getting right before anything else gets built.
+        Everything above reflects where we've landed: the stack, the price, and
+        the answers to the two things you asked about directly, what happens if
+        I'm unavailable, and who handles SEO. Confirm the scope and Phase 1
+        starts.
       </p>
     </div>
 
     <footer class="wrap">
       Prepared by Muhammad Umer Khan · This document reflects the scope and
-      pricing as revised on 5 September
+      pricing as revised on 9 September
     </footer>
 
     <script>
